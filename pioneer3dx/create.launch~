@@ -1,0 +1,22 @@
+<!-- ~/catkin_ws/src/pioneer2dx_Gazebo/create.launch -->
+<launch>
+   
+    <!-- Use the empty_world.launch as a base and load create.world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find pioneer3dx)/create.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+    <!-- Spawn the pioneer 2dx -->
+    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(find pioneer3dx)/pioneer3dx.sdf -x 0 -y 10 -z 0 -model pioneer3dx" />
+ <!--Spawn a room to drive around in -->
+<node name="spawn_room" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(find pioneer3dx)/willowgarage.sdf -model willowgarage" />
+<node name="spawn_router" pkg="gazebo_ros" type="spawn_model"
+        args="-sdf -file $(find pioneer3dx)/router.sdf -model router" />
+</launch>

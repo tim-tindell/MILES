@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/525/trunk/freiburg_tools/gaussian_process/src
+END
+SingleGP.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/525/trunk/freiburg_tools/gaussian_process/src/SingleGP.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/525/trunk/freiburg_tools/gaussian_process/src/Makefile
+END
+covarianceFunctions.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/525/trunk/freiburg_tools/gaussian_process/src/covarianceFunctions.cpp
+END

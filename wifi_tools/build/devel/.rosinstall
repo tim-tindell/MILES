@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/slam/catkin_ws/src/wifi_tools/build/devel/setup.sh
