@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<gazebo version="1.4">
+<gazebo version="1.2">
   <model name="pioneer3dx">
     <link name="chassis">
       <pose>0 0 0.16 0 0 0</pose>
@@ -236,7 +236,7 @@
         <wheelSeparation>0.277</wheelSeparation>
         <wheelDiameter>0.10</wheelDiameter>
         <torque>5</torque>
-        <commandTopic>cmd_vel</commandTopic>
+        <commandTopic>RosAria/cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
         <robotBaseFrame>base_link</robotBaseFrame>

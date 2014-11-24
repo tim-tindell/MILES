@@ -10,4 +10,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 add_executable(3dxControl src/KeyController.cpp)
 target_link_libraries(3dxControl ${catkin_LIBRARIES})
 
+add_executable(routerlisten src/listener.cpp)
+target_link_libraries(routerlisten ${catkin_LIBRARIES})
+
 

@@ -88,12 +88,5 @@ int main (int argc, char** argv)
     printf("Distance from router1: %f\n", sqrt(pow(p3x-r1x,2)+pow(p3y-r1y,2)+pow(p3z-r1z,2)));
     printf("Distance from router2: %f\n", sqrt(pow(p3x-r2x,2)+pow(p3y-r2y,2)+pow(p3z-r2z,2)));
     printf("Distance from router3: %f\n", sqrt(pow(p3x-r3x,2)+pow(p3y-r3y,2)+pow(p3z-r3z,2)));
-   printf("Distance from router4: %f\n", sqrt(pow(p3x-r4x,2)+pow(p3y-r4y,2)+pow(p3z-r4z,2)));
-   printf("Distance from router5: %f\n", sqrt(pow(p3x-r5x,2)+pow(p3y-r5y,2)+pow(p3z-r5z,2)));
-   printf("Distance from router6: %f\n", sqrt(pow(p3x-r6x,2)+pow(p3y-r6y,2)+pow(p3z-r6z,2)));
-   printf("Distance from router7: %f\n", sqrt(pow(p3x-r7x,2)+pow(p3y-r7y,2)+pow(p3z-r7z,2)));
-   printf("Distance from router8: %f\n", sqrt(pow(p3x-r8x,2)+pow(p3y-r8y,2)+pow(p3z-r8z,2)));
-   printf("Distance from router9: %f\n", sqrt(pow(p3x-r9x,2)+pow(p3y-r9y,2)+pow(p3z-r9z,2)));
-   printf("Distance from router10: %f\n", sqrt(pow(p3x-r10x,2)+pow(p3y-r10y,2)+pow(p3z-r10z,2)));
   } 
 }

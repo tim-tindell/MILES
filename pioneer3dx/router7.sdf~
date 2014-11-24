@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <gazebo version="1.2">
-  <model name="router">
-	<pose>-3 3 2 0 0 0</pose>
-	<static>true</static>
+  <model name="router7">
+    <pose>5 5 2 0 0 0</pose>
+    <static>true</static>
     <link name="box">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
@@ -22,12 +22,6 @@
             <size>0.2 0.2 0.2</size>
           </box>
         </geometry>
-	<material>
-          <script>
-            <uri>file://media/materials/scripts/gazebo.material</uri>
-            <name>Gazebo/Yellow</name>
-          </script>
-        </material>
       </visual>
      </link>
   </model>

@@ -1,0 +1,10 @@
+#include <ros/ros.h>
+//#include "wifi_stumbler.h"
+
+int main (int argc, char** argv){
+	while(1){
+		char enter='';
+		printf("press enter to continue\n");
+		while (enter != '\r' && enter != '\n') { enter = getchar(); }
+	}
+}

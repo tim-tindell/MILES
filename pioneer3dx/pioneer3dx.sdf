@@ -236,7 +236,7 @@
         <wheelSeparation>0.277</wheelSeparation>
         <wheelDiameter>0.10</wheelDiameter>
         <torque>5</torque>
-        <commandTopic>cmd_vel</commandTopic>
+        <commandTopic>RosAria/cmd_vel</commandTopic>
         <odometryTopic>odom</odometryTopic>
         <odometryFrame>odom</odometryFrame>
         <robotBaseFrame>base_link</robotBaseFrame>
