@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC  -g -Wall -std=gnu++0x -Os -fPIC -O3 -DNDEBUG   -shared -Wl,-soname,libwifi_scanner.so -o lib/libwifi_scanner.so CMakeFiles/wifi_scanner.dir/src/wifi_scanner.cpp.o -liw 

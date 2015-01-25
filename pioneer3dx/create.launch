@@ -13,7 +13,7 @@
 
 <!-- Spawn the pioneer 2dx -->
 <node name="spawn_model" pkg="gazebo_ros" type="spawn_model"
-args="-sdf -file $(find pioneer3dx)/pioneer3dx.sdf -x 0 -y 10 -z 0 -model pioneer3dx" />
+args="-sdf -file $(find pioneer3dx)/pioneer3dx.sdf -x 0 -y 0 -z 0 -model pioneer3dx" />
  
 
 <!--Spawn routers -->

@@ -5,8 +5,8 @@
 <launch>
   <node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"> 
     <!-- Input data settings-->
-    <param name="config/topic_image_mono"              value="/camera/depth/image_raw"/> 
-    <param name="config/topic_image_depth"             value="/camera/depth/depth_raw"/>
+    <param name="config/topic_image_mono"              value="/camera/rgb/image_rect_color"/> 
+    <param name="config/topic_image_depth"             value="/camera/depth_registered/sw_registered/image_rect_raw"/>
     <param name="config/topic_points"                  value="/camera/depth/points"/> <!--if empty, poincloud will be reconstructed from image and depth -->
 
     <param name="config/feature_detector_type"         value="ORB"/><!-- also available: SIFT, SURF, GFTT (good features to track), ORB. -->
@@ -16,6 +16,9 @@
     <param name="config/ransac_iterations"             value="200"/>
     <param name="config/cloud_creation_skip_step"      value="1"/><!-- subsample the images' pixels (in both, width and height), when creating the cloud -->
     <param name="config/data_skip_step"                value="1"/><!-- subsample the image frames (in time) -->
-
+<param name="config/fixed_frame_name"              value="/map"/>
+<param name="config/ground_truth_frame_name"       value=""/><!--empty string if no ground truth-->
+<param name="config/base_link"               value="/odom"/> <!-- /openni_camera for hand-held kinect. For robot, e.g., /base_link -->
+<param name="config/fixed_camera"                  value="true"/> <!--is the kinect fixed with respect to base, or can it be moved (false makes sense only if transform betw. base_frame and openni_camera is sent via tf)-->
   </node>
 </launch>

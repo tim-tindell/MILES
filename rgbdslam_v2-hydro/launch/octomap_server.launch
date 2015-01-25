@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <launch>
   <!--might only work with the experimental octomap (as of May 11)-->
     <!-- Launch octomap_server for mappingL: Listens to incoming PointCloud2 data 

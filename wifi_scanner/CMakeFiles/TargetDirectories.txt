@@ -1,2 +1,0 @@
-/home/slam/catkin_ws/src/MILES/wifi_scanner/CMakeFiles/test_wifi_scanner.dir
-/home/slam/catkin_ws/src/MILES/wifi_scanner/CMakeFiles/wifi_scanner.dir
