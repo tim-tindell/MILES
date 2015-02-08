@@ -1,0 +1,37 @@
+#include "ros/ros.h"
+#include "geometry_msgs/Twist.h"
+#include <sensor_msgs/Joy.h>
+
+
+void joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
+{
+	ROS_INFO("I heard: linear_:[%f]   angular_[%d]", joy->axes[1], joy->axes[0]);
+  	geometry_msgs::Twist twist;
+        twist.linear.x = joy->axes[1];
+        twist.linear.y = 0;
+        twist.angular.z= joy->axes[0];
+        cmd_vel_topic.publish(twist);
+}
+
+int main(int argc, char **argv)
+{
+
+        // initialize ros
+        ros::init(argc, argv, "Joystick_controller");
+        ros::NodeHandle n;
+
+        // create publisher
+        ros::Publisher cmd_vel_topic = n.advertise<geometry_msgs::Twist>("/RosAria/cmd_vel", 1000);
+        
+        ros::Subscriber joy_command = nh_.subscribe<sensor_msgs::Joy>("joy", 1000, joyCallback);
+	
+        // our loop will publish at 10Hz
+        ros::Rate loop_rate(5);
+
+        int count = 0;
+        while (ros::ok())
+        {
+		ros::spin();
+        }
+        return 0;
+}

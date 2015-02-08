@@ -1,0 +1,17 @@
+<package>
+  <description brief="joy_control">
+
+     joy_control
+
+  </description>
+  <author>Machine7</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/joy_control</url>
+  <depend package="roscpp"/>
+  <depend package="joy"/>
+  <depend package="rosaria"/>
+
+</package>
+
+
