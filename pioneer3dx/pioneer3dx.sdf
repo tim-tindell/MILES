@@ -151,6 +151,7 @@
 		</geometry>
 	</visual>
 	<!-- camera -->
+
     <sensor type="depth" name="camera">
       <update_rate>60.0</update_rate>
       <camera name="head">
@@ -178,12 +179,12 @@
     <alwaysOn>true</alwaysOn>
     <updateRate>60</updateRate>
     <cameraName>camera_ir</cameraName>
-    <imageTopicName>/camera/depth/image_raw</imageTopicName>
-    <cameraInfoTopicName>/camera/depth/camera_info</cameraInfoTopicName>
-    <depthImageTopicName>/camera/depth/depth_raw</depthImageTopicName>
+    <imageTopicName>/camera/rgb/image_rect_color</imageTopicName>
+    <cameraInfoTopicName>/camera/rgb/camera_info</cameraInfoTopicName>
+    <depthImageTopicName>/camera/depth/image_rect_raw</depthImageTopicName>
     <depthImageInfoTopicName>/camera/depth/camera_info</depthImageInfoTopicName>
     <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
-    <frameName>base_footprint</frameName>
+    <frameName>base_link</frameName>
     <pointCloudCutoff>0.5</pointCloudCutoff>
     <distortionK1>0.00000001</distortionK1>
     <distortionK2>0.00000001</distortionK2>

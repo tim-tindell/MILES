@@ -7,8 +7,8 @@ FILE(REMOVE_RECURSE
   "../src/wifi_tools/srv"
   "CMakeFiles/ROSBUILD_genmsg_py"
   "../src/wifi_tools/msg/__init__.py"
-  "../src/wifi_tools/msg/_AccessPoint.py"
   "../src/wifi_tools/msg/_WifiData.py"
+  "../src/wifi_tools/msg/_AccessPoint.py"
 )
 
 # Per-language clean rules from dependency scanning.

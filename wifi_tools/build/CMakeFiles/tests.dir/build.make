@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/slam/catkin_ws/src/wifi_tools
+CMAKE_SOURCE_DIR = /home/slam/catkin_ws/src/MILES/wifi_tools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/slam/catkin_ws/src/wifi_tools/build
+CMAKE_BINARY_DIR = /home/slam/catkin_ws/src/MILES/wifi_tools/build
 
 # Utility rule file for tests.
 
@@ -57,6 +57,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/slam/catkin_ws/src/wifi_tools/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/slam/catkin_ws/src/wifi_tools /home/slam/catkin_ws/src/wifi_tools /home/slam/catkin_ws/src/wifi_tools/build /home/slam/catkin_ws/src/wifi_tools/build /home/slam/catkin_ws/src/wifi_tools/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/slam/catkin_ws/src/MILES/wifi_tools/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/slam/catkin_ws/src/MILES/wifi_tools /home/slam/catkin_ws/src/MILES/wifi_tools /home/slam/catkin_ws/src/MILES/wifi_tools/build /home/slam/catkin_ws/src/MILES/wifi_tools/build /home/slam/catkin_ws/src/MILES/wifi_tools/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

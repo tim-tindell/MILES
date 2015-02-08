@@ -26,25 +26,25 @@ args="-sdf -file $(find pioneer3dx)/pioneer3dx.sdf -x 0 -y 10 -z 0 -model pionee
 <node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router3.sdf -model router3" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router4" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router4.sdf -model router4" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router5" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router5.sdf -model router5" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router6" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router6.sdf -model router6" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router7" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router7.sdf -model router7" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router8" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router8.sdf -model router8" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router9" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router9.sdf -model router9" />
 
-<node name="spawn_router3" pkg="gazebo_ros" type="spawn_model"
+<node name="spawn_router10" pkg="gazebo_ros" type="spawn_model"
         args="-sdf -file $(find pioneer3dx)/router10.sdf -model router10" />
 <!--Spawn a room to drive around in -->
 <node name="spawn_room" pkg="gazebo_ros" type="spawn_model"

@@ -5,9 +5,9 @@
 <launch>
   <node pkg="rgbdslam" type="rgbdslam" name="rgbdslam" cwd="node" required="true" output="screen"> 
     <!-- Input data settings-->
-    <param name="config/topic_image_mono"              value="/camera/rgb/image_rect_color"/> 
-    <param name="config/topic_image_depth"             value="/camera/depth_registered/sw_registered/image_rect_raw"/>
-    <param name="config/topic_points"                  value="/camera/depth/points"/> <!--if empty, poincloud will be reconstructed from image and depth -->
+    <param name="config/topic_image_mono"              value="/camera/rgb/image_raw"/> 
+    <param name="config/topic_image_depth"             value="/camera/depth/depth_raw"/>
+    <param name="config/topic_points"                  value=""/> <!--if empty, poincloud will be reconstructed from image and depth -->
 
     <param name="config/feature_detector_type"         value="ORB"/><!-- also available: SIFT, SURF, GFTT (good features to track), ORB. -->
     <param name="config/feature_extractor_type"        value="ORB"/><!-- also available: SIFT, SURF, SURF128 (extended SURF), ORB. -->

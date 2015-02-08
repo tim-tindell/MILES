@@ -54,23 +54,23 @@ std_msgs/Header.h
 wifi_tools/AccessPoint.h
 ../msg_gen/cpp/include/wifi_tools/wifi_tools/AccessPoint.h
 
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.cpp
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.cpp
 wifi_stumbler.h
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
 
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
 iwlib.h
-/home/slam/catkin_ws/src/wifi_tools/src/iwlib.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/iwlib.h
 ros/ros.h
-/home/slam/catkin_ws/src/wifi_tools/src/ros/ros.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/ros/ros.h
 wifi_tools/AccessPoint.h
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_tools/AccessPoint.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_tools/AccessPoint.h
 wifi_tools/WifiData.h
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_tools/WifiData.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_tools/WifiData.h
 
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler_node.cpp
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler_node.cpp
 wifi_stumbler.h
-/home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.h
+/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
 
 /opt/ros/hydro/include/XmlRpcDecl.h
 ros/macros.h

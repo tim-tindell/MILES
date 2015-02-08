@@ -4,8 +4,8 @@
 CMakeFiles/wifi_stumbler.dir/src/wifi_stumbler.cpp.o
  ../msg_gen/cpp/include/wifi_tools/AccessPoint.h
  ../msg_gen/cpp/include/wifi_tools/WifiData.h
- /home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.cpp
- /home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.h
+ /home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.cpp
+ /home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
  /opt/ros/hydro/include/XmlRpcDecl.h
  /opt/ros/hydro/include/XmlRpcValue.h
  /opt/ros/hydro/include/ros/advertise_options.h
@@ -66,8 +66,8 @@ CMakeFiles/wifi_stumbler.dir/src/wifi_stumbler.cpp.o
 CMakeFiles/wifi_stumbler.dir/src/wifi_stumbler_node.cpp.o
  ../msg_gen/cpp/include/wifi_tools/AccessPoint.h
  ../msg_gen/cpp/include/wifi_tools/WifiData.h
- /home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler.h
- /home/slam/catkin_ws/src/wifi_tools/src/wifi_stumbler_node.cpp
+ /home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
+ /home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler_node.cpp
  /opt/ros/hydro/include/XmlRpcDecl.h
  /opt/ros/hydro/include/XmlRpcValue.h
  /opt/ros/hydro/include/ros/advertise_options.h
