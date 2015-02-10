@@ -11,6 +11,8 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 # The C and CXX include file search paths:
 SET(CMAKE_C_INCLUDE_PATH
   "/home/slam/catkin_ws/src/MILES/wifi_tools/include"
+  "/home/slam/catkin_ws/devel/include"
+  "/home/slam/catkin_ws/src/MILES/perception_pcl/pcl_ros/include"
   "/opt/ros/hydro/include"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"

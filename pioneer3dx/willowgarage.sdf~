@@ -7,14 +7,14 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>model://square_with_texture.dae</uri>
+            <uri>model://willowgarage/meshes/square_with_texture.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://square_with_texture.dae</uri>
+            <uri>model://willowgarage/meshes/square_with_texture.dae</uri>
           </mesh>
         </geometry>
         <cast_shadows>false</cast_shadows>

@@ -8,10 +8,19 @@ void joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
 	ROS_INFO("I heard: linear_:[%f]   angular_[%d]", joy->axes[1], joy->axes[0]);
   	geometry_msgs::Twist twist;
-        twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.2 ? 0.2 : joy->axes[1]) : (joy->axes[1] < -0.2 ? -0.2 : joy->axes[1]) ;
-        twist.linear.y = 0;
-        twist.angular.z= joy->axes[0] > 0 ? (joy->axes[0] > 0.1 ? 0.1 : joy->axes[0]) : (joy->axes[0] < -0.1 ? -0.1 : joy->axes[0]);
-        pioneer_vel.publish(twist);
+	if(joy->buttons[5]>0)
+	{
+	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.6 ? 0.6 : joy->axes[1]) : (joy->axes[1] < -0.6 ? -0.6 : joy->axes[1]) ;
+       	   twist.linear.y = 0;
+           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 1 ? 1 : joy->axes[0]) : (joy->axes[2] < -0.6 ? -0.6 : joy->axes[2]);
+	} 
+	else{
+     	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.2 ? 0.2 : joy->axes[1]) : (joy->axes[1] < -0.2 ? -0.2 : joy->axes[1]) ;
+       	   twist.linear.y = 0;
+           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 0.2 ? 0.2 : joy->axes[0]) : (joy->axes[2] < -0.2 ? -0.2 : joy->axes[2]);
+           
+	}
+	pioneer_vel.publish(twist);
 }
 
 int main(int argc, char **argv)

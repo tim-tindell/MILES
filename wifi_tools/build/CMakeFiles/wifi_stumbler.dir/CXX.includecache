@@ -54,10 +54,6 @@ std_msgs/Header.h
 wifi_tools/AccessPoint.h
 ../msg_gen/cpp/include/wifi_tools/wifi_tools/AccessPoint.h
 
-/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.cpp
-wifi_stumbler.h
-/home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
-
 /home/slam/catkin_ws/src/MILES/wifi_tools/src/wifi_stumbler.h
 iwlib.h
 /home/slam/catkin_ws/src/MILES/wifi_tools/src/iwlib.h

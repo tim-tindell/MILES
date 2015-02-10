@@ -9,13 +9,40 @@
     <param name="config/topic_image_depth"             value="/camera/depth/image_rect_raw"/>
     <param name="config/topic_points"                  value=""/> <!--if empty, poincloud will be reconstructed from image and depth -->
 
-    <param name="config/feature_detector_type"         value="ORB"/><!-- also available: SIFT, SURF, GFTT (good features to track), ORB. -->
-    <param name="config/feature_extractor_type"        value="ORB"/><!-- also available: SIFT, SURF, SURF128 (extended SURF), ORB. -->
-    <param name="config/nn_distance_ratio"             value="0.5"/> <!-- Feature correspondence is valid if distance to nearest neighbour is smaller than this parameter times the distance to the 2nd neighbour -->
-    <param name="config/max_keypoints"                 value="600"/><!-- Extract no more than this many keypoints (not honored by SIFTGPU)-->
-    <param name="config/ransac_iterations"             value="200"/>
-    <param name="config/cloud_creation_skip_step"      value="1"/><!-- subsample the images' pixels (in both, width and height), when creating the cloud -->
-    <param name="config/data_skip_step"                value="1"/><!-- subsample the image frames (in time) -->
+    <param name="config/feature_extractor_type"        value="ORB"/><!-- ORB are fastest descriptors and require no GPU -->
+    <param name="config/feature_detector_type"         value="ORB"/><!-- FAST can guarantee a certain range of keypoints using an adjuster-->
+    <param name="config/detector_grid_resolution"      value="3"/><!-- detect on a 2x2 grid -->
+    <param name="config/max_keypoints"                 value="600"/><!-- Extract no more than this many keypoints -->
+    <param name="config/max_matches"                   value="300"/><!-- Keep the best n matches (important for ORB to set lower than max_keypoints) -->
+
+    <param name="config/min_sampled_candidates"        value="0"/><!-- Frame-to-frame comparisons to random frames (big loop closures) -->
+    <param name="config/predecessor_candidates"        value="3"/><!-- Frame-to-frame comparisons to sequential frames-->
+    <param name="config/neighbor_candidates"           value="3"/><!-- Frame-to-frame comparisons to graph neighbor frames-->
+    <param name="config/nn_distance_ratio"             value="0.9"/><!-- set empirically -->
+    <param name="config/ransac_iterations"             value="100"/><!-- set empirically -->
+    <param name="config/max_matches"                   value="200"/><!-- reduce the amount of matches (otherwise max=max_keypoints), removes outliers, speeds up ransac -->
+    <param name="config/pose_relative_to"              value="largest_loop"/><!-- only optimize part of graph with new constraints -->
+    <param name="config/keep_all_nodes"                value="true"/><!-- assume zero motion if no motion could be found and continue -->
+    <param name="config/fixed_frame_name"              value="/vodom"/><!-- Signify that this is not mapping -->
+
+    <param name="config/backend_solver"                value="pcg"/> <!-- pcg is fast and good for online operation -->
+    <param name="config/cloud_creation_skip_step"      value="16"/> <!-- Heavily subsample point cloud during creation -->
 
   </node>
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+		 <param name="resolution" value="0.0250" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="vodom" />
+		
+		<!-- maximum range to integrate (speedup, accuracy) -->
+		<param name="sensor_model/max_range" value="5.0" />
+                
+                <!--param name="filter_ground" value="false"/-->
+		<!--param name="ground_filter/distance " value="0.1"/-->
+    <param name="base_frame_id" value="/openni2_rgb_optical_frame" /> <!--needs to be set, even if not used-->
+		<!-- data source to integrate (PointCloud2) -->
+        <remap from="cloud_in" to="/rgbdslam/batch_clouds" />
+
+	</node>
 </launch>
