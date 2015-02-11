@@ -6,18 +6,18 @@ ros::Publisher pioneer_vel;
 
 void joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
 {
-	ROS_INFO("I heard: linear_:[%f]   angular_[%d]", joy->axes[1], joy->axes[0]);
+	ROS_INFO("I heard: linear_:[%f]   angular_[%d]", joy->axes[1], joy->axes[2]);
   	geometry_msgs::Twist twist;
 	if(joy->buttons[5]>0)
 	{
 	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.6 ? 0.6 : joy->axes[1]) : (joy->axes[1] < -0.6 ? -0.6 : joy->axes[1]) ;
        	   twist.linear.y = 0;
-           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 1 ? 1 : joy->axes[0]) : (joy->axes[2] < -0.6 ? -0.6 : joy->axes[2]);
+           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 1 ? 1 : joy->axes[2]) : (joy->axes[2] < -0.6 ? -0.6 : joy->axes[2]);
 	} 
 	else{
-     	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.2 ? 0.2 : joy->axes[1]) : (joy->axes[1] < -0.2 ? -0.2 : joy->axes[1]) ;
+     	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.3 ? 0.3 : joy->axes[1]) : (joy->axes[1] < -0.3 ? -0.3 : joy->axes[1]) ;
        	   twist.linear.y = 0;
-           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 0.2 ? 0.2 : joy->axes[0]) : (joy->axes[2] < -0.2 ? -0.2 : joy->axes[2]);
+           twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 0.3 ? 0.3 : joy->axes[2]) : (joy->axes[2] < -0.3 ? -0.3 : joy->axes[2]);
            
 	}
 	pioneer_vel.publish(twist);

@@ -1,24 +1,51 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
-PROJECT(wifi_scanner)
- 
-SET (CMAKE_MODULE_PATH "/usr/share/cmake/Modules")
+cmake_minimum_required(VERSION 2.8.3)
+project(wifi_scanner)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-
-SET(CMAKE_BUILD_TYPE Release)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -std=gnu++0x -Os -fPIC")
 
 FIND_LIBRARY( LIBIW_LIBRARY iw )
 FIND_PATH(LIBIW_INCLUDE_DIR NAMES iwlib.h)
-#SET( LIBIW_INCLUDE_DIR  ${PROJECT_INCLUDE_DIR}/../wireless_tools )
-#FIND_LIBRARY( LIBIW_LIBRARY iw  ${LIBIW_SOURCE_DIR})
 
-INCLUDE_DIRECTORIES( ${PROJECT_SOURCE_DIR}/include ${LIBIW_INCLUDE_DIR})
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  std_msgs
+  message_generation
+)
 
-# General
-ADD_LIBRARY(wifi_scanner SHARED ${PROJECT_SOURCE_DIR}/src/wifi_scanner.cpp)
-TARGET_LINK_LIBRARIES( wifi_scanner ${LIBIW_LIBRARY} )
-ADD_EXECUTABLE( test_wifi_scanner ${PROJECT_SOURCE_DIR}/src/test_wifi_scanner.cpp  )
-TARGET_LINK_LIBRARIES( test_wifi_scanner wifi_scanner)
+ add_message_files(
+   FILES
+#   Message1.msg
+#   Message2.msg
+    wifi_signal_msg.msg
+ )
+
+
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+)
+
+catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES wifi_scanner
+#  CATKIN_DEPENDS roscpp std_msgs
+#  DEPENDS system_lib
+   CATKIN_DEPENDS message_runtime
+)
+
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${LIBIW_INCLUDE_DIR}
+)
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+
+ADD_LIBRARY(wifi_scan SHARED ${PROJECT_SOURCE_DIR}/src/wifi_scanner.cpp)
+TARGET_LINK_LIBRARIES( wifi_scan ${LIBIW_LIBRARY} )
+
+add_executable(scan_wifi src/test_wifi_scanner.cpp)
+target_link_libraries(scan_wifi ${catkin_LIBRARIES})
+TARGET_LINK_LIBRARIES( scan_wifi wifi_scan)
+
+add_dependencies(scan_wifi wifi_scanner_generate_messages_cpp)

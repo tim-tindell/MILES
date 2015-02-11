@@ -15,7 +15,7 @@ void joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
            twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 1 ? 1 : joy->axes[2]) : (joy->axes[2] < -0.6 ? -0.6 : joy->axes[2]);
 	} 
 	else{
-     	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.2 ? 0.2 : joy->axes[1]) : (joy->axes[1] < -0.2 ? -0.2 : joy->axes[1]) ;
+     	   twist.linear.x = joy->axes[1] > 0 ? (joy->axes[1] > 0.3 ? 0.3 : joy->axes[1]) : (joy->axes[1] < -0.3 ? -0.3 : joy->axes[1]) ;
        	   twist.linear.y = 0;
            twist.angular.z= joy->axes[2] > 0 ? (joy->axes[2] > 0.2 ? 0.2 : joy->axes[2]) : (joy->axes[2] < -0.2 ? -0.2 : joy->axes[2]);
            

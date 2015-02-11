@@ -21,22 +21,24 @@
     <param name="config/store_pointclouds"             value="true"/> <!-- if, e.g., only trajectory is required, setting this to false saves lots of memory -->
     <param name="config/individual_cloud_out_topic"    value="/rgbdslam/batch_clouds"/>;
     <param name="config/send_clouds_rate"              value="3"/> <!-- When sending the point clouds (e.g. to RVIZ or Octomap Server) limit sending to this many clouds per second -->
-    <param name="config/detector_grid_resolution"      value="30"/><!-- detect on a 2x2 grid -->
+    <param name="config/detector_grid_resolution"      value="7"/><!-- detect on a 2x2 grid -->
     <param name="config/max_keypoints"                 value="600"/><!-- Extract no more than this many keypoints -->
-    <param name="config/max_matches"                   value="300"/><!-- Keep the best n matches (important for ORB to set lower than max_keypoints) -->
+    <param name="config/max_matches"                   value="400"/><!-- Keep the best n matches (important for ORB to set lower than max_keypoints) -->
 
     <param name="config/min_sampled_candidates"        value="0"/><!-- Frame-to-frame comparisons to random frames (big loop closures) -->
-    <param name="config/predecessor_candidates"        value="40"/><!-- Frame-to-frame comparisons to sequential frames-->
-    <param name="config/neighbor_candidates"           value="40"/><!-- Frame-to-frame comparisons to graph neighbor frames-->
+    <param name="config/predecessor_candidates"        value="10"/><!-- Frame-to-frame comparisons to sequential frames-->
+    <param name="config/neighbor_candidates"           value="10"/><!-- Frame-to-frame comparisons to graph neighbor frames-->
+
+
     <param name="config/nn_distance_ratio"             value="0.9"/><!-- set empirically -->
     <param name="config/ransac_iterations"             value="100"/><!-- set empirically -->
     <param name="config/max_matches"                   value="200"/><!-- reduce the amount of matches (otherwise max=max_keypoints), removes outliers, speeds up ransac -->
     <param name="config/pose_relative_to"              value="largest_loop"/><!-- only optimize part of graph with new constraints -->
-    <param name="config/keep_all_nodes"                value="false"/><!-- assume zero motion if no motion could be found and continue -->
+    <param name="config/keep_all_nodes"                value="true"/><!-- assume zero motion if no motion could be found and continue -->
     <param name="config/fixed_frame_name"              value="/vodom"/><!-- Signify that this is not mapping -->
 
     <param name="config/backend_solver"                value="pcg"/> <!-- pcg is fast and good for online operation -->
-    <param name="config/cloud_creation_skip_step"      value="5"/> <!-- Heavily subsample point cloud during creation -->
+    <param name="config/cloud_creation_skip_step"      value="2"/> <!-- Heavily subsample point cloud during creation -->
   </node>
 <node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
 		 <param name="resolution" value="0.0250" />

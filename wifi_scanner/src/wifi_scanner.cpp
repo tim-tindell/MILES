@@ -1,18 +1,18 @@
-#include "wifi_scanner.h"
+#include "wifi_scan.h"
 #include <errno.h>
 access_point::access_point(){
 
 }
 
-wifi_scanner::wifi_scanner(){
+wifi_scan::wifi_scan(){
 }
 
-wifi_scanner::~wifi_scanner(){
+wifi_scan::~wifi_scan(){
     if (socket_fd > 0)
         iw_sockets_close(socket_fd);
 }
 
-bool wifi_scanner::init(std::string interface, const std::function<scanning_callback> &cb){
+bool wifi_scan::init(std::string interface, const std::function<scanning_callback> &cb){
     socket_fd = iw_sockets_open();
     interface_name = interface;
     if (cb)
@@ -29,17 +29,19 @@ bool wifi_scanner::init(std::string interface, const std::function<scanning_call
     return true;
 }
 
-int wifi_scanner::scan(){
+int wifi_scan::scan(){
     struct iwreq      wrq;
     unsigned char *   buffer = NULL;      /* Results */
     int               buflen = IW_SCAN_MAX_DATA; /* Min for compat WE<17 */
     struct timeval    tv;             /* Select timeout */
     int               timeout = 15000000;     /* 15s */
-    int               scanflags = IW_SCAN_ALL_ESSID | IW_SCAN_ALL_FREQ | IW_SCAN_ALL_MODE | IW_SCAN_ALL_RATE;		/* Flags for scan */
+    int               scanflags = IW_SCAN_THIS_ESSID | IW_SCAN_ALL_FREQ | IW_SCAN_ALL_MODE | IW_SCAN_ALL_RATE;		/* Flags for scan */
+    char *essid = NULL;
+    essid = strdup("MASON-SECURE");
 
-    wrq.u.data.pointer = NULL;
-    wrq.u.data.length = 0;
-    wrq.u.data.length = 0;
+    wrq.u.data.pointer = essid;
+    wrq.u.data.length = strlen(essid)+1;
+    //wrq.u.data.length = 0;
 
     tv.tv_sec = 0;
     tv.tv_usec = 250000;
@@ -153,7 +155,7 @@ int wifi_scanner::scan(){
     return(0);
 }
 
-void wifi_scanner::process_iw_event(struct stream_descr *	stream,	/* Stream of events */
+void wifi_scan::process_iw_event(struct stream_descr *	stream,	/* Stream of events */
         struct iw_event *		event,	/* Extracted token */
         access_point** ap,
         double scan_time){
