@@ -1,0 +1,19 @@
+<!-- 
+ -->
+<launch>
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+		 <param name="resolution" value="0.0250" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="/vodom" />
+		
+		<!-- maximum range to integrate (speedup, accuracy) -->
+		<param name="sensor_model/max_range" value="6.0" />
+                <!--param name="filter_ground" value="false"/-->
+		<!--param name="ground_filter/distance " value="0.1"/-->
+    <param name="base_frame_id" value="/camera_link" /> <!--needs to be set, even if not used-->
+		<!-- data source to integrate (PointCloud2) -->
+        <remap from="cloud_in" to="/rgbdslam/batch_clouds" />
+
+	</node>
+</launch>
