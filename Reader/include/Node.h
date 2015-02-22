@@ -1,0 +1,27 @@
+/*
+ * Node.h
+ *
+ *  Created on: 2015-02-13
+ *      Author: rtindell
+ */
+#ifndef NODE_H
+#define NODE_H
+
+
+#include <string>
+#include <Pose.h>
+#include <Router.h>
+
+
+class Node{
+    public:
+	void Normalize();
+	void Sort(bool up);
+	std::string toString();
+	router routers[20];
+	pose pos;
+
+       
+};
+
+#endif

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>listener</name>
+  <name>reader</name>
   <version>0.0.0</version>
-  <description>Listen to Pose and Wifi</description>
+  <description>Read file created by RGBDSLAM</description>
 
   <maintainer email="rtindel2@gmu.edu">Robert Tindell</maintainer>
 
@@ -14,7 +14,7 @@
 
 
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>geometry_msgs</build_depend>
+<build_depend>geometry_msgs</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
@@ -26,10 +26,8 @@
   <run_depend>std_msgs</run_depend>
   <run_depend>tf</run_depend>
 
+
   <export>                            
-
-    <gazebo_ros                                                                
-
-    gazebo_model_path="${prefix}/../pioneer3dx"/>                    
+                 
 </export>
 </package>
